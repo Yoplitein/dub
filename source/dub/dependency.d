@@ -493,8 +493,8 @@ unittest {
 	assert(b == a.merge(b));
 	assert(b == b.merge(a));
 	b = Dependency(Version.MASTER);
-	assert(a.merge(m) == m);
-	assert(m.merge(a) == m);
+	assert(a.merge(b) == b);
+	assert(b.merge(a) == b);
 
 	a.optional = true;
 	assert(a.matches(Version.MASTER));
@@ -504,8 +504,8 @@ unittest {
 	assert(b == a.merge(b));
 	assert(b == b.merge(a));
 	b = Dependency(Version.MASTER);
-	assert(a.merge(m) == m);
-	assert(m.merge(a) == m);
+	assert(a.merge(b) == b);
+	assert(b.merge(a) == b);
 
 	logDebug("Dependency unittest sucess.");
 }
